@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" " http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.swjtuhc.demo.mapper.RecipesMapper">
+	<resultMap type="edu.swjtuhc.demo.model.SysRecipes" id="recipes_result">
+		
+		<result column="recipeName" property="recipeName" javaType="java.lang.String" jdbcType="VARCHAR"/>
+		<result column="publishDate" property="publishDate" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+		<result column="rimg" property="rimg" javaType="java.lang.String" jdbcType="VARCHAR"/>
+		<result column="publisher" property="publisher" javaType="java.lang.String" jdbcType="VARCHAR"/>
+	</resultMap>
+	<select id="selectAllRecipes" resultMap="recipes_result">
+		select * from sysrecipes
+	</select>
+</mapper>

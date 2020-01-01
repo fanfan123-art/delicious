@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" " http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.swjtuhc.demo.mapper.GetcommentMapper">
+	<resultMap type="edu.swjtuhc.demo.model.Syscomment" id="comment_result">
+		<id column="RID" property="RID" javaType="java.lang.Integer" jdbcType="INTEGER"/>
+		<id column="CID" property="CID" javaType="java.lang.Integer" jdbcType="INTEGER"/>
+		<id column="uid" property="uid" javaType="java.lang.Integer" jdbcType="INTEGER"/>
+		<result column="username" property="username" javaType="java.lang.String" jdbcType="VARCHAR"/>
+		<result column="Ccontent" property="Ccontent" javaType="java.lang.String" jdbcType="VARCHAR"/>
+		<result column="Ctime" property="Ctime" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+		
+	</resultMap>
+	<select id="selectAllcomment" resultMap="comment_result">
+		select * from syscomment
+	</select>
+</mapper>

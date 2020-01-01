@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
-	" http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" " http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="edu.swjtuhc.demo.mapper.UserMapper">
-	<resultMap type="edu.swjtuhc.demo.model.SysUser" id="user_result">
-	<id column="u_id" property="UID" javaType="java.lang.String" jdbcType="VARCHAR"/>
-	<result column="username" property="username" javaType="java.lang.String" jdbcType="VARCHAR"/>
-	<result column="password" property="password" javaType="java.lang.String" jdbcType="VARCHAR"/>
-	<result column="name" property="name" javaType="java.lang.String" jdbcType="VARCHAR"/>
-	<result column="age" property="age" javaType="java.lang.Integer" jdbcType="INTEGER"/>
-	<result column="gender" property="gender" javaType="java.lang.String" jdbcType="VARCHAR"/>
-	</resultMap>
-	<select id="selectAllUsers"  resultMap="user_result">
-	select * from sysuser
-	</select>
+	<insert id="insertUser"
+		parameterType="edu.swjtuhc.demo.model.SysUser">
+		insert into sysuser
+		(email,password,username,number,registertime)
+		values
+		(#{email},#{password},#{username},#{number},#{registertime})
+	</insert>
 	
+	<select id="selectUserByUsername"
+		parameterType="java.lang.String"		
+		resultType="edu.swjtuhc.demo.model.SysUser">
+		select * from sysuser
+		where
+		username=#{username}
+	</select>
 </mapper>

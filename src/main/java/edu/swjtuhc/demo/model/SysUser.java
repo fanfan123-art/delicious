@@ -1,16 +1,18 @@
 package edu.swjtuhc.demo.model;
 
 public class SysUser {
-	private String username;
-	private String password;
-	private String name;
-	private int age;
-	private String gender;
-	public String getUsername() {
-		return username;
+	
+	 String email;
+	 String password;
+	 String username;
+	 String number;
+	 String registertime;
+	
+	public String getEmail() {
+		return email;
 	}
-	public void setUsername(String username) {
-		this.username = username;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	public String getPassword() {
 		return password;
@@ -18,23 +20,31 @@ public class SysUser {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getName() {
-		return name;
+	public String getUsername() {
+		return username;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setUsername(String username) {
+		this.username = username;
 	}
-	public int getAge() {
-		return age;
+	public String getNumber() {
+		return number;
 	}
-	public void setAge(int age) {
-		this.age = age;
+	public void setNumber(String number) {
+		this.number = number;
 	}
-	public String getGender() {
-		return gender;
+	public String getRegistertime() {
+		return registertime;
 	}
-	public void setGender(String gender) {
-		this.gender = gender;
+	public void setRegistertime(String registertime) {
+		this.registertime = registertime;
 	}
+	@Override
+	public String toString() {
+		return "SysUser [email=" + email + ", password=" + password + ", username=" + username + ", number=" + number
+				+ ", registertime=" + registertime + "]";
+	}
+	
+	
+	
 
 }
